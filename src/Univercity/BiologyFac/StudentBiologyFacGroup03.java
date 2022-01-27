@@ -1,9 +1,9 @@
-package Univercity.PhisFac;
+package Univercity.BiologyFac;
 
-public class StudentPhisFacGroup02 extends Group02 {
+public class StudentBiologyFacGroup03 extends Group03 {
     String name;
     double mathScore, foreignLenguageScore, phisicalScore;
-    public StudentPhisFacGroup02(String name, double mathScore, double foreignLenguageScore, double phisicalScore){
+    public StudentBiologyFacGroup03(String name, double mathScore, double foreignLenguageScore, double phisicalScore){
         this.name = name;
         this.mathScore = mathScore;
         this.foreignLenguageScore = foreignLenguageScore;
@@ -30,4 +30,3 @@ public class StudentPhisFacGroup02 extends Group02 {
         return facultetName;
     }
 }
-

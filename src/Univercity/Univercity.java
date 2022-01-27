@@ -14,24 +14,40 @@ import Univercity.PhisFac.StudentPhisFacGroup03;
 import java.util.Stack;
 
 public class Univercity {
-    String univercity = "BGU";
+    String univercityName = "BGU";
+    public double studentMathMark;
+    public double studentForeignLanguageMark;
+    public String facultetNameT;
+    public String specialityT;
     public double averageScore(double mathMark, double foreignLanguageScore, double phisicalScore){
         return  (mathMark + foreignLanguageScore + phisicalScore)/3;
     }
 
-    public double averageScoreMathThisGroup(Stack<? extends Univercity> listAllStudents) {
-        for (int i = 0; i < listAllStudents.size(); i++) {
-             if(listAllStudents.pop().getClass() == "StudentPhisFacGroup01";
-       }
+    double mathTotalAverage(double mathTotalAverage, Stack<? extends Univercity> studentStack){
+        return mathTotalAverage/studentStack.size();
+    }
+
+    double foreignLanguageTotalForThisGroup (Stack<Univercity> studentStack, String speciality, String facultetName){
+        double numberStudentsThisGroup = 0;
+        double totalForeignLanguageThisGroup = 0.0;
+        for (Univercity univercity : studentStack){
+            if (univercity.specialityT.equals(speciality) || univercity.facultetNameT.equals(facultetName)){
+                numberStudentsThisGroup += 1.0;
+                totalForeignLanguageThisGroup +=univercity.studentForeignLanguageMark;
+            }
+        }
+        return totalForeignLanguageThisGroup/numberStudentsThisGroup;
     }
 
     public static void main(String[] args) {
         Stack<Univercity> studentsStack = new Stack<>();
         double studentAverageMark;
         Univercity univercity = new Univercity();
-        StudentBiologyFacGroup01 studentBiologyFacGroup01 = new StudentBiologyFacGroup01("Ivanov Ivan", 4.9, 9.0, 4.3);
-        studentAverageMark = univercity.averageScore(studentBiologyFacGroup01.getMathScore(), studentBiologyFacGroup01.getForeignLenguageScore(), studentBiologyFacGroup01.getPhisicalScore());
-        System.out.printf("%.2f", studentAverageMark);
+
+        StudentBiologyFacGroup03 studentBiologyFacGroup03 = new StudentBiologyFacGroup03("Ivanov Ivan", 4.9, 9.0, 4.3);
+        studentAverageMark = studentBiologyFacGroup03.averageScore(studentBiologyFacGroup03.getMathScore(), studentBiologyFacGroup03.getForeignLenguageScore(), studentBiologyFacGroup03.getPhisicalScore());
+        System.out.printf("Total for Student" + "  :                     " + "%.2f", studentAverageMark);
+
         StudentBiologyFacGroup01 firstStudentBiologyFacGroup01 = new StudentBiologyFacGroup01("Korolev Serge", 3.7, 5.8, 10.3);
         studentsStack.push(firstStudentBiologyFacGroup01);
         StudentBiologyFacGroup01 secondStudentBiologyFacGroup01 = new StudentBiologyFacGroup01("Abukhovich Viktar", 4.4, 8.9, 7.6);
@@ -42,8 +58,8 @@ public class Univercity {
         studentsStack.push(firstStudentBiologyFacGroup02);
         StudentBiologyFacGroup02 secondStudentBiologyFacGroup02 = new StudentBiologyFacGroup02("Mahmud Cherces", 9.8, 2.0, 4.3);
         studentsStack.push(secondStudentBiologyFacGroup02);
-        StudentBiologyFacGroup03 studentBiologyFacGroup03 = new StudentBiologyFacGroup03("Ramzan Kadirov", 1.0, 0.1, 0.2);
-        studentsStack.add(studentBiologyFacGroup03);
+        StudentBiologyFacGroup03 firststudentBiologyFacGroup03 = new StudentBiologyFacGroup03("Ramzan Kadirov", 1.0, 0.1, 0.2);
+        studentsStack.add(firststudentBiologyFacGroup03);
         StudentBiologyFacGroup03 secondStudentBiologyFacGroup03 = new StudentBiologyFacGroup03("Ramzan Zan", 2.0, 0.1, 0.2);
         studentsStack.add(secondStudentBiologyFacGroup03);
         StudentBiologyFacGroup03 thirdStudentBiologyFacGroup03 = new StudentBiologyFacGroup03("Ramzan Zan Zan", 3.0, 0.1, 0.2);
@@ -89,10 +105,14 @@ public class Univercity {
         StudentPhisFacGroup03 thirdStudentPhisFacGroup03 = new StudentPhisFacGroup03("Rashford Viktar", 0.1, 10.9, 8.9);
         studentsStack.push(thirdStudentPhisFacGroup03);
 
-
-
-
-
+        double mathTotalUnivercity = 0.0;
+        for(Univercity thisStudent : studentsStack){
+        mathTotalUnivercity += thisStudent.studentMathMark;
+        }
+        System.out.println();
+        System.out.printf("Total Math For The Whole Univercity" + "  :  " + "%.2f", univercity.mathTotalAverage(mathTotalUnivercity, studentsStack));
+        System.out.println();
+        System.out.printf( "Total Foreign languadge score for any group" + "  :  " + "%.2f", univercity.foreignLanguageTotalForThisGroup(studentsStack, "Higher Algebra and information protection", "Meh-Mat facultet" ));
 
 
 

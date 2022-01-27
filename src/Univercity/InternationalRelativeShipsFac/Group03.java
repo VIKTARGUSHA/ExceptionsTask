@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Group03 extends InternationalRelativShipsFac {
     int numberStudents = 7;
-    String speciality = "Customs";
+    public String speciality = "Customs";
     ArrayList<StudentInternationalRelativeShipsFacGroup03> listStudentsInternationalRelativeShipsFacGroup03 = new ArrayList<>();
     StudentInternationalRelativeShipsFacGroup03 firstStudentInternationalRelativeShipsFacGroup03 = new StudentInternationalRelativeShipsFacGroup03 ("Michailov Stas", 12.7, 0.8, 7.3);
     StudentInternationalRelativeShipsFacGroup03 secondStudentInternationalRelativeShipsFacGroup03 = new StudentInternationalRelativeShipsFacGroup03("Kalina Viktar", 5.4, 7.9, 4.9);

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Group02 extends BioFacultets{
     int numberStudents = 2;
-    String speciality = "MicroBiology";
+    public String speciality = "MicroBiology";
 //    ArrayList<StudentBiologyFacGroup02> listStudentsBiologyFacGroup02 = new ArrayList<>();
 //    StudentBiologyFacGroup02 firststudentBiologyFacGroup02 = new StudentBiologyFacGroup02("Mahmud Abass", 33.4, 9.0, 0.3);
 //    StudentBiologyFacGroup02 secondstudentBiologyFacGroup02 = new StudentBiologyFacGroup02("Mahmud Cherces", 9.8, 2.0, 4.3);

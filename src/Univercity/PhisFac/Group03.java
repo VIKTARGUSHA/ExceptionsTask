@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Group03 extends PhisicalFac{
     int numberStudents = 30;
-    String speciality = "Solid state physics";
+    public String speciality = "Solid state physics";
 //    ArrayList<StudentPhisFacGroup03> listStudentsPhisFacGroup03 = new ArrayList<>();
 //    StudentPhisFacGroup03 firstStudentPhisFacGroup03 = new StudentPhisFacGroup03 ("Messi Ibragim", 11.0, 55.9, 38.3);
 //    StudentPhisFacGroup03 secondStudentPhisFacGroup03 = new StudentPhisFacGroup03("Becham Vadim", 0.9, 1.0, -8.2);

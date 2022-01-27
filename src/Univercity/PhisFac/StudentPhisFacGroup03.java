@@ -8,6 +8,8 @@ public class StudentPhisFacGroup03 extends Group03{
         this.mathScore = mathScore;
         this.foreignLenguageScore = foreignLenguageScore;
         this.phisicalScore = phisicalScore;
+        studentMathMark = mathScore;
+        studentForeignLanguageMark = foreignLenguageScore;
     }
     public String toString(){
         return (name + " " + speciality + " " + facultetName + " " + mathScore + " " + foreignLenguageScore + " " + phisicalScore);

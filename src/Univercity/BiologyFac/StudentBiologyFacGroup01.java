@@ -1,15 +1,18 @@
-package Univercity.PhisFac;
+package Univercity.BiologyFac;
 
-public class StudentPhisFacGroup02 extends Group02 {
+import Univercity.Univercity;
+
+public class StudentBiologyFacGroup01 extends Group01{
     String name;
     double mathScore, foreignLenguageScore, phisicalScore;
-    public StudentPhisFacGroup02(String name, double mathScore, double foreignLenguageScore, double phisicalScore){
+    public StudentBiologyFacGroup01(String name, double mathScore, double foreignLenguageScore, double phisicalScore){
         this.name = name;
         this.mathScore = mathScore;
+        studentMathMark = mathScore;
         this.foreignLenguageScore = foreignLenguageScore;
         this.phisicalScore = phisicalScore;
-        studentMathMark = mathScore;
         studentForeignLanguageMark = foreignLenguageScore;
+
     }
     public String toString(){
         return (name + " " + speciality + " " + facultetName + " " + mathScore + " " + foreignLenguageScore + " " + phisicalScore);
@@ -28,6 +31,10 @@ public class StudentPhisFacGroup02 extends Group02 {
     }
     public String getFacultetName(){
         return facultetName;
+    }
+
+    public double averageMark(double mathScore, double foreignLenguageScore, double phisicalScore){
+        return (mathScore + foreignLenguageScore + phisicalScore);
     }
 }
 
