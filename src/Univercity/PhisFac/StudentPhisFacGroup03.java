@@ -3,7 +3,7 @@ package Univercity.PhisFac;
 public class StudentPhisFacGroup03 extends Group03{
     String name;
     double mathScore, foreignLenguageScore, phisicalScore;
-    StudentPhisFacGroup03(String name, double mathScore, double foreignLenguageScore, double phisicalScore){
+    public StudentPhisFacGroup03(String name, double mathScore, double foreignLenguageScore, double phisicalScore){
         this.name = name;
         this.mathScore = mathScore;
         this.foreignLenguageScore = foreignLenguageScore;
@@ -11,6 +11,21 @@ public class StudentPhisFacGroup03 extends Group03{
     }
     public String toString(){
         return (name + " " + speciality + " " + facultetName + " " + mathScore + " " + foreignLenguageScore + " " + phisicalScore);
+    }
+    public String getName (){
+        return name;
+    }
+    public double getMathScore(){
+        return  mathScore;
+    }
+    public double getForeignLenguageScore(){
+        return foreignLenguageScore;
+    }
+    public double getPhisicalScore(){
+        return  phisicalScore;
+    }
+    public String getFacultetName(){
+        return facultetName;
     }
 }
 
