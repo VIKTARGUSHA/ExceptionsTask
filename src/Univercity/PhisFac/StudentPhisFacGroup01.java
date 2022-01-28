@@ -1,13 +1,17 @@
 package Univercity.PhisFac;
 
+import Univercity.MehMatFac.MehMatFacultet;
+
 public class StudentPhisFacGroup01 extends Group01 {
     String name;
-    double mathScore, foreignLenguageScore, phisicalScore;
-    public StudentPhisFacGroup01(String name, double mathScore, double foreignLenguageScore, double phisicalScore){
-    this.name = name;
-    this.mathScore = mathScore;
+    //double mathScore, foreignLenguageScore, phisicalScore;
+    public StudentPhisFacGroup01(String name, double mathScores, double foreignLenguageScore, double phisicalScores){
+        super();
+        new PhisicalFac();
+        this.name = name;
+    mathScore = mathScores;
     this.foreignLenguageScore = foreignLenguageScore;
-    this.phisicalScore = phisicalScore;
+    phisicalScore = phisicalScores;
         studentMathMark = mathScore;
         studentForeignLanguageMark = foreignLenguageScore;
     }

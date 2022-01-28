@@ -3,8 +3,11 @@ package Univercity.PhisFac;
 import Univercity.Univercity;
 
 public class PhisicalFac extends Univercity {
-    public String facultetName = "Phisical facultet";
+    //public String facultetName = "Phisical facultet";
     public String getFacultetName(){
         return facultetName;
+    }
+    public PhisicalFac(){
+        facultetName = "Phisical facultet";
     }
 }

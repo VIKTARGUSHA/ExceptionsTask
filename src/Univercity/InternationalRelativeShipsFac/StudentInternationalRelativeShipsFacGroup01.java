@@ -1,15 +1,20 @@
 package Univercity.InternationalRelativeShipsFac;
 
+import Univercity.MehMatFac.MehMatFacultet;
+
 public class StudentInternationalRelativeShipsFacGroup01 extends Group01 {
     String name;
-    double mathScore, foreignLenguageScore, phisicalScore;
-    public StudentInternationalRelativeShipsFacGroup01(String name, double mathScore, double foreignLenguageScore, double phisicalScore){
+   // double mathScore, foreignLenguageScore, phisicalScore;
+    public StudentInternationalRelativeShipsFacGroup01(String name, double mathScores, double foreignLenguageScore, double phisicalScores){
+//        super();
+//        new InternationalRelativShipsFac();
         this.name = name;
-        this.mathScore = mathScore;
+        mathScore = mathScores;
         this.foreignLenguageScore = foreignLenguageScore;
-        this.phisicalScore = phisicalScore;
+        phisicalScore = phisicalScores;
         studentMathMark = mathScore;
         studentForeignLanguageMark = foreignLenguageScore;
+
     }
     public String toString(){
         return (name + " " + speciality + " " + facultetName + " " + mathScore + " " + foreignLenguageScore + " " + phisicalScore);

@@ -3,9 +3,9 @@ package Univercity.MehMatFac;
 import Univercity.Univercity;
 
 public class MehMatFacultet extends Univercity {
-    public String facultetName = "Meh-Mat facultet";
+  //  public String facultetName = "Meh-Mat facultet";
    public MehMatFacultet(){
-       facultetNameT = facultetName;
+       facultetName = "Meh-Mat facultet";
    }
     public String getFacultetName(){
         return facultetName;

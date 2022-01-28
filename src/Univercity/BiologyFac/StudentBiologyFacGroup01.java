@@ -1,18 +1,20 @@
 package Univercity.BiologyFac;
 
+import Univercity.MehMatFac.MehMatFacultet;
 import Univercity.Univercity;
 
 public class StudentBiologyFacGroup01 extends Group01{
     String name;
-    double mathScore, foreignLenguageScore, phisicalScore;
-    public StudentBiologyFacGroup01(String name, double mathScore, double foreignLenguageScore, double phisicalScore){
+   // double mathScore, foreignLenguageScore, phisicalScore;
+    public StudentBiologyFacGroup01(String name, double mathScores, double foreignLenguageScore, double phisicalScores){
+    //    super();
+       // new MehMatFacultet();
         this.name = name;
-        this.mathScore = mathScore;
+        mathScore = mathScores;
         studentMathMark = mathScore;
         this.foreignLenguageScore = foreignLenguageScore;
-        this.phisicalScore = phisicalScore;
+        phisicalScore = phisicalScores;
         studentForeignLanguageMark = foreignLenguageScore;
-
     }
     public String toString(){
         return (name + " " + speciality + " " + facultetName + " " + mathScore + " " + foreignLenguageScore + " " + phisicalScore);

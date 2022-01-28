@@ -2,12 +2,14 @@ package Univercity.MehMatFac;
 
 public class StudentMehMatFacGroup03 extends Group03{
     String name;
-    double mathScore, foreignLenguageScore, phisicalScore;
-    public StudentMehMatFacGroup03(String name, double mathScore, double foreignLenguageScore, double phisicalScore){
+   // double mathScore, foreignLenguageScore, phisicalScore;
+    public StudentMehMatFacGroup03(String name, double mathScores, double foreignLenguageScore, double phisicalScores){
+        super();
+        new MehMatFacultet();
         this.name = name;
-        this.mathScore = mathScore;
+        mathScore = mathScores;
         this.foreignLenguageScore = foreignLenguageScore;
-        this.phisicalScore = phisicalScore;
+        phisicalScore = phisicalScores;
         studentMathMark = mathScore;
         studentForeignLanguageMark = foreignLenguageScore;
     }
