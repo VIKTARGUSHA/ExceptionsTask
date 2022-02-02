@@ -4,12 +4,10 @@ import Univercity.MehMatFac.MehMatFacultet;
 import Univercity.Univercity;
 
 public class StudentBiologyFacGroup01 extends Group01{
-    String name;
-   // double mathScore, foreignLenguageScore, phisicalScore;
-    public StudentBiologyFacGroup01(String name, double mathScores, double foreignLenguageScore, double phisicalScores){
-    //    super();
-       // new MehMatFacultet();
-        this.name = name;
+
+    public StudentBiologyFacGroup01(String namee, String mathScores, String foreignLenguageScore, String phisicalScores){
+
+        name = namee;
         mathScore = mathScores;
         studentMathMark = mathScore;
         this.foreignLenguageScore = foreignLenguageScore;
@@ -22,21 +20,13 @@ public class StudentBiologyFacGroup01 extends Group01{
     public String getName (){
         return name;
     }
-    public double getMathScore(){
-        return  mathScore;
-    }
-    public double getForeignLenguageScore(){
-        return foreignLenguageScore;
-    }
-    public double getPhisicalScore(){
-        return  phisicalScore;
-    }
+
     public String getFacultetName(){
         return facultetName;
     }
 
-    public double averageMark(double mathScore, double foreignLenguageScore, double phisicalScore){
-        return (mathScore + foreignLenguageScore + phisicalScore);
+    public double averageMark(String mathScore, String foreignLenguageScore, String phisicalScore){
+        return (Double.valueOf(mathScore) + Double.valueOf(foreignLenguageScore) + Double.valueOf(phisicalScore));
     }
 }
 
