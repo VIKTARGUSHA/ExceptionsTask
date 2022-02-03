@@ -22,9 +22,10 @@ public class Univercity {
     public String mathScore, foreignLenguageScore, phisicalScore;
 public String name;
 
-    public double mathTotalAverage(Stack<? extends Univercity> studentStack) throws NoItemsException, NegativeAndAboveScoreException {
+    public double mathTotalAverage(Stack<? extends Univercity> studentStack) throws NoItemsException, NegativeAndAboveScoreException, UnivercityHasNoFacultetsException {
         double mathTotalUnivercity = 0.0;
         double numberOfStudents = studentStack.size();
+        double numberOfStudentsInvolveNone = 0.0;
         for (Univercity thisStudent : studentStack) {
             if (thisStudent.foreignLenguageScore == "None" && thisStudent.mathScore == "None" && thisStudent.phisicalScore == "None") {
                 throw new NoItemsException(thisStudent.name, "This student doesn't has any subject");
@@ -40,6 +41,10 @@ public String name;
             }
             numberOfStudents -= thisStudent.mathScore == "None" ? 1.0 : 0.0;
             mathTotalUnivercity += thisStudent.mathScore == "None" ? 0.0 : Double.parseDouble(thisStudent.mathScore);
+            numberOfStudentsInvolveNone += 1.0;
+        }
+        if(numberOfStudentsInvolveNone == 0){
+            throw new UnivercityHasNoFacultetsException("Specified univercity doesn't have ane facultets");
         }
 
             return mathTotalUnivercity / numberOfStudents;
@@ -125,6 +130,7 @@ public String name;
 
 
     public static void main(String[] args) {
+        Stack<Univercity> studentsStack2 = new Stack<>();
         Stack<Univercity> studentsStack = new Stack<>();
         double studentAverageMark;
         Univercity univercity = new Univercity();
@@ -186,9 +192,11 @@ public String name;
         studentsStack.push(thirdStudentPhisFacGroup03);
 
         try {
-        System.out.printf("Total Math For The Whole Univercity" + "  :  " + "%.2f", univercity.mathTotalAverage(studentsStack));
+        System.out.printf("Total Math For The Whole Univercity" + "  :  " + "%.2f", univercity.mathTotalAverage(studentsStack2));
         }catch (NoItemsException ex) {
         }catch (NegativeAndAboveScoreException e){
+        }catch (UnivercityHasNoFacultetsException e){
+
         }
         System.out.println();
 
