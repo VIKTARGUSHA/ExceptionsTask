@@ -41,6 +41,7 @@ public String name;
             numberOfStudents -= thisStudent.mathScore == "None" ? 1.0 : 0.0;
             mathTotalUnivercity += thisStudent.mathScore == "None" ? 0.0 : Double.parseDouble(thisStudent.mathScore);
         }
+
             return mathTotalUnivercity / numberOfStudents;
     }
 
@@ -94,7 +95,7 @@ public String name;
             return ((univercity.mathScore == "None" ? 0.0 : Double.parseDouble(univercity.mathScore)) + (univercity.phisicalScore == "None" ? 0.0 : Double.parseDouble(univercity.phisicalScore)) + (univercity.studentForeignLanguageMark == "None" ? 0.0 : Double.parseDouble(univercity.studentForeignLanguageMark))) / numberSabjects;
         }
 
-    public double averagePhisicalScoreForThisFacultet(Stack<? extends Univercity> stackAllTheStudents, String facName) throws NegativeAndAboveScoreException, NumberFormatException, NoItemsException {
+    public double averagePhisicalScoreForThisFacultet(Stack<? extends Univercity> stackAllTheStudents, String facName) throws NegativeAndAboveScoreException, NoItemsException, ThisFacHasNoAnyGroupsException {
         double sumScore = 0;
         double counter = 0;
         for (Univercity univercity : stackAllTheStudents) {
@@ -114,6 +115,10 @@ public String name;
                 sumScore += (univercity.facultetName == facName) ? univercity.phisicalScore == "None" ? 0.0 : Double.parseDouble(univercity.phisicalScore) : 0.0;
                 counter += (univercity.facultetName == facName && univercity.phisicalScore != "None") ? 1 : 0;
             }
+        }
+        if (counter == 0.0) {
+            throw new ThisFacHasNoAnyGroupsException("Current facultet is void or absence : ", facName) ;
+
         }
         return sumScore / counter;
     }
@@ -205,11 +210,13 @@ public String name;
         System.out.println();
 
         try {
-            System.out.printf("Average Phisical Score for this Facultet" + "  :  " + "%.2f", univercity.averagePhisicalScoreForThisFacultet(studentsStack, "Phisical facultet"));
+            System.out.printf("Average Phisical Score for this Facultet" + "  :  " + "%.2f", univercity.averagePhisicalScoreForThisFacultet(studentsStack, "Phisic facultet"));
         } catch (NegativeAndAboveScoreException ex){
         }
         catch (NoItemsException e) {
             System.out.println();
+        }
+        catch (ThisFacHasNoAnyGroupsException ex){
         }
     }
 }
